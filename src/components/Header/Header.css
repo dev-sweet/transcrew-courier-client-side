@@ -1,7 +1,7 @@
 .nav-bar {
   padding: 20px 0;
   background-color: #eaf5ff;
-  border-bottom: #0275d8;
+  border-bottom: 1px solid #0065bd;
 }
 .nav-bar a.navbar-link.nav-link {
   font-weight: 600;

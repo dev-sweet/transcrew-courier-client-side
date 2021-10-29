@@ -4,10 +4,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
 }
 .banner-container {
-  background-color: rgb(12 12 12 / 65%);
+  background-color: rgb(12 12 12 / 46%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,10 +22,12 @@
   bottom: 0;
 }
 .banner-content {
-  color: #e1e1e1;
+  color: #ececec;
 }
 .banner-content p span {
   margin-left: 10px;
+  font-weight: 600;
+  color: #fff;
 }
 .car i.fas {
   font-size: 30px;
