@@ -5,10 +5,27 @@ const AddService = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    //   add a new service
+    fetch('https://aqueous-tundra-75877.herokuapp.com/services', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert('Service added successfully');
+          reset();
+        }
+      });
+  };
   return (
     <div className="d-flex align-items-center justify-content-center py-5">
       <div className="service-form">
