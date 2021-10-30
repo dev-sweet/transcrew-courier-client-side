@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddService from './components/AddService/AddService';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <PrivateRoute path="/addService">
               <AddService />
+            </PrivateRoute>
+            <PrivateRoute path="/placeOrder/:id">
+              <PlaceOrder />
             </PrivateRoute>
           </Switch>
           <Footer />

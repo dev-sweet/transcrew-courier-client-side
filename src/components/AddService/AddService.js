@@ -51,9 +51,7 @@ const AddService = () => {
             {...register('img', { required: true })}
             placeholder="image url"
           />
-          {errors.password && (
-            <span className="errors">Password is required</span>
-          )}
+          {errors.img && <span className="errors">Image is required</span>}
           <input className="service-btn" type="submit" value="Submit" />
         </form>
       </div>

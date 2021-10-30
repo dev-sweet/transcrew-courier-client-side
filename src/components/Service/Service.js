@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import './Service.css';
 
 const Service = ({ service }) => {
-  const { name, description, img } = service;
+  const { name, description, img, cost, _id } = service;
+  console.log(service);
   return (
     <Col>
       <Card className="service p-2 pb-3">
@@ -16,8 +17,11 @@ const Service = ({ service }) => {
         />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
-          <Card.Text className="pb-4">{description}</Card.Text>
-          <Link className="service-btn" to="/booking">
+          <Card.Text>{description}</Card.Text>
+          <h3 className="pb-2">
+            <strong className="primary-color">${cost}</strong>
+          </h3>
+          <Link className="service-btn" to={`/placeOrder/${_id}`}>
             Book Now
           </Link>
         </Card.Body>

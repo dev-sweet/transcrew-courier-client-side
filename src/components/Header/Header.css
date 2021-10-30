@@ -1,11 +1,11 @@
 .nav-bar {
   padding: 20px 0;
-  background-color: #333333;
-  border-bottom: 1px solid #0065bd;
+  background-color: #fff;
+  border-bottom: 1px solid #ec5f00;
 }
 .nav-bar a.navbar-link.nav-link {
   font-weight: 600;
-  color: rgb(240, 240, 240);
+  color: rgb(37, 37, 37);
   transition: 0.2s;
 }
 .nav-bar a.navbar-link.nav-link:hover {
