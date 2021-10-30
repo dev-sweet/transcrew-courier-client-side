@@ -2,7 +2,11 @@
   text-align: center;
   border: 1px solid #ec5f00;
   height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
 }
+
 .service-btn {
   background-color: #ec5f00;
   color: #fff;
