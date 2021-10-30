@@ -9,6 +9,8 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddService from './components/AddService/AddService';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import MyOrders from './components/MyOrders/MyOrders';
+import ManageOrders from './components/ManageOrders/ManageOrders';
 function App() {
   return (
     <div className="App">
@@ -30,6 +32,12 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/placeOrder/:id">
               <PlaceOrder />
+            </PrivateRoute>
+            <PrivateRoute path="/myOrders">
+              <MyOrders />
+            </PrivateRoute>
+            <PrivateRoute path="/manageOrders">
+              <ManageOrders />
             </PrivateRoute>
           </Switch>
           <Footer />

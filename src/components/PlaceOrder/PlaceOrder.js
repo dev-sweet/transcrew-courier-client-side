@@ -6,7 +6,7 @@ import useAuth from '../../hooks/useAuth';
 import './PlaceOrder.css';
 const PlaceOrder = () => {
   const [service, setService] = useState({});
-  const { name, description, img, cost } = service;
+  const { name, description, img, cost, _id } = service;
 
   const { user } = useAuth();
   // hook form
@@ -19,11 +19,39 @@ const PlaceOrder = () => {
 
   //
   const { id } = useParams();
+
   // handle on submit and send data to server
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const orderDetails = {
+      serviceName: name,
+      serviceFee: cost,
+      img,
+      id: _id,
+      userName: data.name,
+      userEmail: data.email,
+      userPhone: data.phone,
+      userAddress: data.address,
+      status: 'pending',
+    };
+    fetch('http://localhost:5000/orders', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(orderDetails),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert('Service added successfully');
+          reset();
+        }
+      });
+  };
+
   // load service
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://aqueous-tundra-75877.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [id]);

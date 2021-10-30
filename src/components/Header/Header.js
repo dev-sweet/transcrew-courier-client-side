@@ -23,12 +23,12 @@ const Header = () => {
                 Services
               </Nav.Link>
               {user.email && (
-                <Nav.Link className="navbar-link" as={Link} to="/">
+                <Nav.Link className="navbar-link" as={Link} to="/myOrders">
                   My Orders
                 </Nav.Link>
               )}
               {user.email && (
-                <Nav.Link className="navbar-link" as={Link} to="/">
+                <Nav.Link className="navbar-link" as={Link} to="/manageOrders">
                   Manage Orders
                 </Nav.Link>
               )}
@@ -38,7 +38,7 @@ const Header = () => {
                 </Nav.Link>
               )}
               {user.email && (
-                <Nav.Link className="navbar-link" as={Link} to="/addService">
+                <Nav.Link className="navbar-link" as={Link} to="/">
                   {user.displayName}
                 </Nav.Link>
               )}
