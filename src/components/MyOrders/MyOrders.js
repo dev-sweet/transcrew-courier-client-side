@@ -9,7 +9,7 @@ const MyOrders = () => {
   const handleCancel = (id) => {
     const proceed = window.confirm('Are you cancel this service ?');
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://aqueous-tundra-75877.herokuapp.com/orders/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -23,7 +23,7 @@ const MyOrders = () => {
     }
   };
   useEffect(() => {
-    fetch('http://localhost:5000/orders')
+    fetch('https://aqueous-tundra-75877.herokuapp.com/orders')
       .then((res) => res.json())
       .then((data) => {
         const myOrders = data.filter((order) => order.userEmail === user.email);

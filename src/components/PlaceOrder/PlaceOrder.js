@@ -33,7 +33,7 @@ const PlaceOrder = () => {
       userAddress: data.address,
       status: 'pending',
     };
-    fetch('http://localhost:5000/orders', {
+    fetch('https://aqueous-tundra-75877.herokuapp.com/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
