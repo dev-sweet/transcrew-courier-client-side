@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png';
 import './Header.css';
 const Header = () => {
+  const { user, logOut } = useAuth();
   return (
     <div className="mb-5 pb-5">
       <Navbar className="nav-bar" collapseOnSelect fixed="top" expand="lg">
@@ -20,22 +22,32 @@ const Header = () => {
               <Nav.Link className="navbar-link" as={Link} to="/services">
                 Services
               </Nav.Link>
-              <Nav.Link className="navbar-link" as={Link} to="/booking">
-                Booking
-              </Nav.Link>
-              <Nav.Link className="navbar-link" as={Link} to="/">
-                My Orders
-              </Nav.Link>
-              <Nav.Link className="navbar-link" as={Link} to="/">
-                Manage Orders
-              </Nav.Link>
-              <Nav.Link className="navbar-link" as={Link} to="/booking">
-                Add a New Service
-              </Nav.Link>
-              <Nav.Link className="login-btn" as={Link} to="/login">
-                Login
-              </Nav.Link>
+              {user.email && (
+                <Nav.Link className="navbar-link" as={Link} to="/">
+                  My Orders
+                </Nav.Link>
+              )}
+              {user.email && (
+                <Nav.Link className="navbar-link" as={Link} to="/">
+                  Manage Orders
+                </Nav.Link>
+              )}
+              {user.email && (
+                <Nav.Link className="navbar-link" as={Link} to="/addService">
+                  Add a New Service
+                </Nav.Link>
+              )}
+              {!user.email && (
+                <Nav.Link className="login-btn" as={Link} to="/login">
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
+            {user.email && (
+              <button className="logout" onClick={logOut}>
+                Logout
+              </button>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
