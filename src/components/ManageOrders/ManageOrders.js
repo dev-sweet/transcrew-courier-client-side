@@ -40,7 +40,7 @@ const ManageOrders = () => {
     fetch('https://aqueous-tundra-75877.herokuapp.com/orders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, [statusId]);
+  }, [orders]);
 
   return (
     <div className="manage-orders">

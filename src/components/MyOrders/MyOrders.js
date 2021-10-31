@@ -29,7 +29,7 @@ const MyOrders = () => {
         const myOrders = data.filter((order) => order.userEmail === user.email);
         setOrders(myOrders);
       });
-  }, []);
+  }, [orders]);
   return (
     <div className="py-5 px-3">
       <h1 className="primary-color text-center pb-5">My Orders</h1>
