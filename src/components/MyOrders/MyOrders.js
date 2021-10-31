@@ -48,13 +48,13 @@ const MyOrders = () => {
             </h3>
             <div>
               {order.status === 'pending' ? (
-                <span className="pending">{order.status}</span>
+                <span className="pending">Pending</span>
               ) : (
-                <span className="approved">{order.status}</span>
+                <span className="approved">Approved</span>
               )}
             </div>
             <button
-              className="btn btn-danger mt-3 mt-md-0"
+              className="btn btn-danger btn-sm mt-3 mt-md-0"
               onClick={() => handleCancel(order._id)}
             >
               Cancel

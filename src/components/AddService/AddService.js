@@ -38,6 +38,15 @@ const AddService = () => {
             placeholder="Service Name"
           />
           {errors.name && <span className="errors">Name is required</span>}
+          <input
+            className="service-input"
+            {...register('cost', { required: true })}
+            type="text"
+            placeholder="Service Fee"
+          />
+          {errors.cost && (
+            <span className="errors">Shipping fee is required</span>
+          )}
           <textarea
             className="service-input"
             {...register('description', { required: true })}
